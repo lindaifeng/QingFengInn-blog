@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ldf.demo.mapper.FriendLinkMapper">
+
+<!--查询所有友链-->
+    <select id="listFriendLike" resultType="com.ldf.demo.pojo.FriendLink">
+       select * from t_friend order by t_friend.create_time desc
+    </select>
+
+<!--根据友链博客地址查询是否重复-->
+    <select id="getFriendLink" resultType="com.ldf.demo.pojo.FriendLink">
+        select * from t_friend where blogaddress=#{blogaddress};
+    </select>
+
+<!--根据id查询友链信息-->
+    <select id="getFriendLinkById" resultType="com.ldf.demo.pojo.FriendLink">
+        select * from t_friend where id=#{id};
+    </select>
+
+<!--保存友链-->
+    <insert id="saveFriendLink" parameterType="com.ldf.demo.pojo.FriendLink">
+        insert into t_friend (blogname,blogaddress,pictureaddress,create_time) values (#{blogname},#{blogaddress},#{pictureaddress},#{createTime});
+    </insert>
+
+<!--更新友链-->
+    <update id="updateFriendLink" parameterType="com.ldf.demo.pojo.FriendLink">
+        update t_friend set blogname = #{blogname},blogaddress=#{blogaddress},pictureaddress=#{pictureaddress} where id=#{id};
+    </update>
+
+<!--删除友链-->
+    <delete id="deleteFriendLink">
+        delete from t_friend where id=#{id};
+    </delete>
+</mapper>

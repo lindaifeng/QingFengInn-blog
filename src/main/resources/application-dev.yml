@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+#配置日志
+logging:
+  level:
+    #不同目录下的日志可配置不同级别
+    root: info
+    com.star: debug
+    #采用相对路径方式将日志文件输出到【log/blog-dev.log】
+  file: log/blog-dev.log
+
+#起别名，mapper路径，驼峰命名规则
+mybatis:
+  type-aliases-package: com.ldf.demo.pojo
+  mapper-locations: classpath:com.ldf.demo.mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#配置端口
+server:
+  port: 80

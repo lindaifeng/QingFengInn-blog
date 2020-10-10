@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ldf.demo.mapper.PictureMapper">
+
+    <!--后台博客操作-->
+
+    <!--查询所有图片-->
+    <select id="listPictures" resultType="com.ldf.demo.pojo.Picture">
+        select * from myblog.t_picture order by t_picture.id desc
+    </select>
+    <!--根据id查询图片信息-->
+    <select id="getPictureById" resultType="com.ldf.demo.pojo.Picture">
+        select * from t_picture where id=#{id};
+    </select>
+    <!--保存图片-->
+    <insert id="savePicture" parameterType="com.ldf.demo.pojo.Picture">
+        insert into t_picture (picturename,pictureaddress,picturedescription,picturetime)
+        values (#{picturename},#{pictureaddress},#{picturedescription},#{picturetime});
+    </insert>
+    <!--更新图片信息-->
+    <update id="updatePicture" parameterType="com.ldf.demo.pojo.Picture">
+        update t_picture set picturename = #{picturename},pictureaddress=#{pictureaddress},picturedescription=#{picturedescription},picturetime=#{picturetime}
+        where id=#{id};
+    </update>
+    <!--删除图片信息-->
+    <delete id="deletePicture">
+    delete from t_picture where id = #{id}
+    </delete>
+
+</mapper>
+
