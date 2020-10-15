@@ -191,6 +191,6 @@
         <result property="createTime" column="create_time"/>
     </resultMap>
     <select id="getArchiveBlogs" resultMap="archiveBlogs">
-        select b.title,b.create_time from myblog.t_blog b order by b.create_time desc ;
+        select b.id, b.title,b.create_time from myblog.t_blog b order by b.create_time desc ;
     </select>
 </mapper>
