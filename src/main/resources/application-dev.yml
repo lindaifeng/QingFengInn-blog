@@ -11,7 +11,8 @@ logging:
     root: info
     com.star: debug
     #采用相对路径方式将日志文件输出到【log/blog-dev.log】
-  file: log/blog-dev.log
+  file: 
+    name: log/blog-dev.log
 
 #起别名，mapper路径，驼峰命名规则
 mybatis:
