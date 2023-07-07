@@ -2,8 +2,9 @@
 个人博客完整源码：如果对你有所帮助，可以给个star鼓励一下
 # SpringBoot个人博客项目搭建
 
+注意：博客源码已迁移至Gitee：[博客Gitee源码](https://gitee.com/lindaifeng/QingFengInn-blog)
 >  **博客Github源码：**[https://github.com/lindaifeng/QingFengInn-blog](https://github.com/lindaifeng/QingFengInn-blog)
->  **个人博客主页：**[http://www.qingfenginn.top/](http://www.qingfenginn.top/)
+>  **个人博客主页：**[http://www.lindaifeng.vip/](http://www.lindaifeng.vip/)
 
 
 # 一、项目简介：
